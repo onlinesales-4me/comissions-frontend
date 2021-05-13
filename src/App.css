@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+/* NAVBAR */
+.navbar{
+  height: 10vh;
+  width: 100vw;
+  border-bottom: 1px solid #010033;
+  background-color:#EED7D3;
+  box-sizing: content-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-logo-container{
+  height: 100%;
+  width: 30%;
+  display: inline-block;
+  position: relative;
+  left: 0;
+  top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-logo{
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.navbar-menu-button{
+  float: right;
+  height: 100%;
+  max-width: 30%;
+  margin: 0% 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  position: relative;
+}
+
+.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #010033;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.left:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.navbar-menu{
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 30%;
+  background-color: #EED7D3;
+  z-index: 99;
+  border-left: 1px solid #010033;
+  border-right: 1px solid #010033;
+  border-bottom: 1px solid #010033;
+}
+
+.navbar-menu-tile{
+  color: #010033;
+  border-bottom: 1px solid #010033;
+  padding: 5%;
+  margin: 0%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  -ms-box-sizing:     border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+}
+
+.navbar-hamburger-icon-container-container{
+  height: 100%;
+  width: 50px;
+  padding: 40% 0%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  -ms-box-sizing:     border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+}
+
+.navbar-hamburger-icon-container{
+  height: 33%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-hamburger-icon-tile{
+  height: 40%;
+  width: 90%;
+  background-color: black;
+}
+/* NAVBAR */
+
+/* HOME */
+.home-container{
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  -ms-box-sizing:     border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+}
+/* HOME */
+
+/* ADD PRODUCT */
+.label-form{
+  display: block;
+  color: #010033;
+}
+.input-form{
+  width: 100%;
+  border: none;
+}
+.form-group{
+  padding: 0% 5%;
+}
+.img-form{
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  margin: 0% 1%;
+}
+.col-50{
+  display: inline-block;
+  width: 50%;
+}
+/* ADD PRODUCT */
+
+/* UTILS */
+body {
+  background:
+  radial-gradient(#dfccc9 15%, transparent 16%) 0 0,
+  radial-gradient(#dfccc9 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#EED7D3;
+  background-size:16px 16px;
+}
+p{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard-body {
+  height: 90vh;
+  width: 100vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.on-hover:hover {
+  cursor: pointer !important;
+}
+
+.flex-justify-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.padding-inside-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  -ms-box-sizing:     border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+}
+
+.col-33 {
+  width: 33%;
+}
+.col-34 {
+  width: 34%;
+}
+
+.margin-view-template{
+  margin: 5% 0%;
 }
