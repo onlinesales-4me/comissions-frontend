@@ -26,6 +26,8 @@
 
 .description > p {
   word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
 }
 
 .navbar-menu-button{
