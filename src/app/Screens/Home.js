@@ -29,7 +29,7 @@ const Home = ({loggedIn, templates, setSelectedTemplate, setSelectedProduct, get
             // handle error
             console.log(error);
         }) */
-        //getTemplates();
+        getTemplates();
     }, []);
 
     const { height, width } = useWindowDimensions();
@@ -112,7 +112,7 @@ const Home = ({loggedIn, templates, setSelectedTemplate, setSelectedProduct, get
                                                                                         </div>
                                                                             } else if(productField.object.localeCompare('description') === 0) {
                                                                                 return <div className="form-group" key={productField.id}>
-                                                                                            <div className="flex-justify-align" style={{width: '100%'}}>
+                                                                                            <div className="flex-justify-align" style={{width: '100%', wordBreak: 'break-all'}}>
                                                                                                 {HTMLReactParser(product[productField.name.toLowerCase()])}
                                                                                             </div>
                                                                                         </div>

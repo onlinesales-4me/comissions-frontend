@@ -78,7 +78,7 @@ const ViewTemplate = ({selectedTemplate, selectedProduct}) => {
                                 } else if(templateField.object.localeCompare('description') === 0) {
                                     return <div className="form-group margin-view-template" key={templateField.ID}>
                                                 <div className="col-50"> <span style={{fontWeight: 'bold'}}>{templateField.name}:</span> </div>
-                                                <div className="flex-justify-align" style={{width: '100%'}}>
+                                                <div className="flex-justify-align" style={{width: '100%', color: '#010033'}}>
                                                     {HTMLReactParser(templateObject[templateField.name])}
                                                 </div>
                                             </div>
