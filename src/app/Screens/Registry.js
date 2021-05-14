@@ -9,6 +9,7 @@ const AddProduct = ({router}) => {
         await registriesService.get('/')
         .then(function (response) {
             // handle success
+            console.log(response.data)
             setRegistries(response.data.registries);
         })
         .catch(function (error) {
@@ -30,11 +31,14 @@ const AddProduct = ({router}) => {
                 </div>
                 <br/>
                 <table style={{width: "100%"}}>
-                    <tr>
-                        <th>Dirección IP</th>
-                        <th>Descripción</th>
-                        <th>Fecha</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Dirección IP</th>
+                            <th>Descripción</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {
                             registries.map((registry, index) => {
                                 return  <tr>
@@ -44,6 +48,7 @@ const AddProduct = ({router}) => {
                                         </tr>
                             })
                         }
+                    </tbody>
                 </table> 
                 <br/>
             </div>

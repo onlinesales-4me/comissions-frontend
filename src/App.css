@@ -24,7 +24,7 @@
   align-items: center;
 }
 
-.description p {
+.description > p {
   word-wrap: break-word;
 }
 
