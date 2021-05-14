@@ -138,13 +138,24 @@ const EditTemplate = ({setCurrentPage, selectedTemplate, getTemplates}) => {
             })
             .then(function (response) {
                 // handle success
-                console.log(response);
-                alert('plantilla editada');
+                Swal.fire({
+                    title: `Éxito`,
+                    text: 'Plantilla editada',
+                    type: "success",
+                    confirmButtonColor: "#D9272E",
+                    imageHeight: 200,
+                });
                 getTemplates();
             })
             .catch(function (error) {
                 // handle error
-                console.log(error);
+                Swal.fire({
+                    title: `Error`,
+                    text: 'error',
+                    type: "error",
+                    confirmButtonColor: "#D9272E",
+                    imageHeight: 200,
+                });
             })
         } else {
             alert('solo puede existir un campo nombre');

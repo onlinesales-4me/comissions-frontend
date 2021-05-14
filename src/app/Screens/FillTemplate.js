@@ -6,6 +6,8 @@ import EditorConvertToHTML from './EditorConvertToHTML';
 
 import filltemplatesService from '../api/fillTemplates';
 
+import Swal from "sweetalert2";
+
 const FillTemplate = ({templates, getTemplates}) => {
 
     const [selectedTemplate, setSelectedTemplate] = useState(templates.length>0?templates[0]:undefined);
@@ -202,7 +204,7 @@ const FillTemplate = ({templates, getTemplates}) => {
             } else if(selectedTemplate.fields[index].object.localeCompare('photo') === 0) {
                 let formData = new FormData();
                 formData.append('pic', templateObject[selectedTemplate.fields[index].name].file, 'pic');
-                const photoUrl = await axios.post('http://localhost:8000/upload-photo', formData, {
+                const photoUrl = await axios.post(process.env.REACT_APP_API_URL+'/upload-photo', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -213,7 +215,7 @@ const FillTemplate = ({templates, getTemplates}) => {
                 for (let i = 0; i < templateObject[selectedTemplate.fields[index].name].files.length; i++) {
                     formData.append('pic', templateObject[selectedTemplate.fields[index].name].files[i], 'pic');
                 }
-                const photoUrl = await axios.post('http://localhost:8000/upload-gallery', formData, {
+                const photoUrl = await axios.post(process.env.REACT_APP_API_URL+'/upload-gallery', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -230,7 +232,7 @@ const FillTemplate = ({templates, getTemplates}) => {
                 for (let i = 0; i < templateObject[selectedTemplate.fields[index].name].length; i++) {
                     formData.append('pic', templateObject[selectedTemplate.fields[index].name][i].file, 'pic');
                 }
-                const photoUrl = await axios.post('http://localhost:8000/upload-gallery', formData, {
+                const photoUrl = await axios.post(process.env.REACT_APP_API_URL+'/upload-gallery', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -261,7 +263,13 @@ const FillTemplate = ({templates, getTemplates}) => {
         .then(function (response) {
             // handle success
             console.log(response);
-            alert('creado');
+            Swal.fire({
+                title: `Éxito`,
+                text: 'Producto agregado',
+                type: "success",
+                confirmButtonColor: "#D9272E",
+                imageHeight: 200,
+            });
             setSelectedTemplate(templates[0]);
             setSelectedTemplateIndex(0);
             initTemplateObject();
@@ -269,7 +277,13 @@ const FillTemplate = ({templates, getTemplates}) => {
         })
         .catch(function (error) {
             // handle error
-            console.log(error);
+            Swal.fire({
+                title: `Error`,
+                text: 'error',
+                type: "error",
+                confirmButtonColor: "#D9272E",
+                imageHeight: 200,
+            });
             initTemplateObject();
             setSelectedTemplate(templates[0]);
             setSelectedTemplateIndex(0);
