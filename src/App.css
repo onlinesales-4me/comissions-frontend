@@ -24,6 +24,10 @@
   align-items: center;
 }
 
+.description p {
+  word-wrap: break-word;
+}
+
 .navbar-menu-button{
   float: right;
   height: 100%;
