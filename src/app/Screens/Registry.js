@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import registriesService from '../api/registries';
 
 const AddProduct = ({router}) => {
 
     const [registries, setRegistries] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/registries')
+        await registriesService.get('http://localhost:8000/registries')
         .then(function (response) {
             // handle success
             setRegistries(response.data.registries);
