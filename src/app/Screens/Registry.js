@@ -5,7 +5,7 @@ const AddProduct = ({router}) => {
 
     const [registries, setRegistries] = useState([]);
 
-    useEffect(() => {
+    useEffect( async () => {
         await registriesService.get('http://localhost:8000/registries')
         .then(function (response) {
             // handle success
